@@ -56,7 +56,7 @@ The backend implements industry-standard patterns:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/O2ymandias/FreshCart.Backend.git
+git clone https://github.com/O2ymandias/FreshCart.AdminDashboard.git
 cd FreshCart.Backend
 ```
 
