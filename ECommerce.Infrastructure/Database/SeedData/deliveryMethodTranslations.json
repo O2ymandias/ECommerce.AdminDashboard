@@ -1,0 +1,58 @@
+﻿[
+  {
+    "languageCode": "en",
+    "shortName": "UPS1",
+    "description": "Fastest delivery time",
+    "deliveryTime": "1-2 Days",
+    "deliveryMethodId": 1
+  },
+  {
+    "languageCode": "ar",
+    "shortName": "يو بي إس 1",
+    "description": "أسرع وقت توصيل",
+    "deliveryTime": "يوم إلى يومين",
+    "deliveryMethodId": 1
+  },
+  {
+    "languageCode": "en",
+    "shortName": "UPS2",
+    "description": "Get it within 5 days",
+    "deliveryTime": "2-5 Days",
+    "deliveryMethodId": 2
+  },
+  {
+    "languageCode": "ar",
+    "shortName": "يو بي إس 2",
+    "description": "يصلك خلال 5 أيام",
+    "deliveryTime": "2 إلى 5 أيام",
+    "deliveryMethodId": 2
+  },
+  {
+    "languageCode": "en",
+    "shortName": "UPS3",
+    "description": "Slower but cheap",
+    "deliveryTime": "5-10 Days",
+    "deliveryMethodId": 3
+  },
+  {
+    "languageCode": "ar",
+    "shortName": "يو بي إس 3",
+    "description": "أبطأ ولكنه أرخص",
+    "deliveryTime": "5 إلى 10 أيام",
+    "deliveryMethodId": 3
+  },
+  {
+    "languageCode": "en",
+    "shortName": "FREE",
+    "description": "Free! You get what you pay for",
+    "deliveryTime": "1-2 Weeks",
+    "deliveryMethodId": 4
+  },
+  {
+    "languageCode": "ar",
+    "shortName": "مجاني",
+    "description": "مجاني! تحصل على ما تدفع مقابله",
+    "deliveryTime": "أسبوع إلى أسبوعين",
+    "deliveryMethodId": 4
+  }
+]

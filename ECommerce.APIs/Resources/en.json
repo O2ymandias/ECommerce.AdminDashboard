@@ -1,0 +1,129 @@
+{
+  "validation": {
+    "required": "The {0} field is required.",
+    "maxLength": "The {0} field must not exceed {1} characters.",
+    "email": "Please enter a valid email address.",
+    "phone": "Please enter a valid phone number.",
+    "passwordPolicy": "Password must be at least 6 characters long and include at least one uppercase letter, one lowercase letter, one digit, and one special character.",
+    "invalidPhoneEgypt": "Please enter a valid Egyptian phone number.",
+    "range": "The {0} field must be between {1} and {2}."
+  },
+
+  "apiErrors": {
+    "badRequest": "The request was invalid or cannot be served.",
+    "unauthorized": "Authentication is required and has failed or has not yet been provided.",
+    "forbidden": "You do not have permission to access this resource.",
+    "notFound": "The requested resource could not be found.",
+    "internalServerError": "An unexpected error occurred on the server.",
+    "genericError": "An error occurred."
+  },
+
+  "auth": {
+    "registration": {
+      "emailAlreadyExists": "This email address is already in use.",
+      "userNameAlreadyExists": "This username is already taken.",
+      "failedToCreateUser": "Failed to create user \"{0}\".",
+      "failedToAssignUserToRole": "Failed to assign user \"{0}\" to the \"{1}\" role.",
+      "userCreatedSuccessfully": "User \"{0}\" has been created successfully."
+    },
+
+    "login": {
+      "invalidLogin": "Incorrect username/email or password.",
+      "welcomeUser": "Welcome, {0}"
+    },
+
+    "token": {
+      "refreshTokenRequired": "Refresh token is required.",
+      "refreshTokenFailed": "Unable to refresh the token.",
+      "invalidToken": "Invalid token.",
+      "inactiveToken": "This refresh token is no longer active.",
+      "tokenRefreshed": "Token refreshed successfully."
+    }
+  },
+
+  "account": {
+    "userNotFound": "User not found.",
+
+    "resetPassword": {
+      "emailSent": "If your email is in our system, we’ve sent you a link to reset your password. Please check your inbox.",
+      "invalidResetLink": "Invalid password reset link.",
+      "passwordResetSuccess": "Your password has been successfully reset."
+    },
+
+    "basicInfo": {
+      "noChanges": "No changes were made.",
+      "updateFailed": "Basic info update failed: {0}",
+      "updateSuccess": "Your basic info has been updated successfully."
+    },
+
+    "passwordChange": {
+      "success": "Password has been updated successfully.",
+      "failed": "Update failed: {0}"
+    },
+
+    "emailChange": {
+      "sameEmail": "This is already your current email.",
+      "incorrectPassword": "Incorrect password.",
+      "emailTaken": "Email already taken.",
+      "verificationSent": "A verification code has been sent to your new email address.",
+      "invalidOrExpiredCode": "Verification code has expired or is invalid.",
+      "changeFailed": "Unable to change email due to: {0}",
+      "changeSuccess": "Email changed successfully."
+    }
+  },
+
+  "order": {
+    "cartNotFound": "Cart not found. Please try again or refresh the page.",
+    "cartEmpty": "Your shopping cart is empty.",
+    "deliveryMethodUnavailable": "Selected delivery method is not available. Please choose a different option.",
+    "productNotExists": "Product \"{0}\" in your cart no longer exists.",
+    "notEnoughStock": "Not enough stock for product \"{0}\".",
+    "createdSuccessfully": "Order created successfully.",
+
+    "notCancellable": "Order is null or not cancellable.",
+    "noProductAssociated": "There is no product associated with this order item.",
+    "cancelledSuccessfully": "Order has been cancelled successfully.",
+    "cancelFailed": "Cancellation failed due to: {0}"
+  },
+
+  "checkout": {
+    "orderNotFound": "Order not found. Please try again or contact support.",
+    "cashSuccess": "Cash on delivery order created successfully.",
+    "alreadyProcessed": "This order is already `{0}` and cannot be paid again.",
+    "stripeSessionCreated": "Stripe checkout session created successfully.",
+    "noSessionAssociated": "No checkout session is associated with this order. This order will be cancelled.",
+    "sessionNotFound": "Session not found on Stripe.",
+    "sessionExpired": "The checkout session has expired and the order has been cancelled.",
+    "paymentCompleted": "Payment completed successfully.",
+    "awaitingPayment": "Checkout session retrieved. Awaiting payment.",
+    "sessionExpiredSuccessfully": "Managed to expire this session `{0}`.",
+    "sessionExpireFailed": "Failed to expire checkout session due to: {0}"
+  },
+
+  "cart": {
+    "cartNotFound": "Cart with ID {0} does not exist.",
+    "productNotInCart": "Product {0} is not in the cart.",
+    "productNotFound": "Product with ID {0} does not exist.",
+    "outOfStock": "Product {0} is out of stock.",
+    "addSuccess": "Product {0} has been added to the cart successfully.",
+    "addFailed": "Failed to add product {0} to the cart.",
+    "increaseQuantity": "The quantity of product {0} has been increased to {1} in the cart.",
+    "removeSuccess": "Product {0} has been removed from the cart.",
+    "removeFailed": "Failed to remove product {0} from the cart.",
+    "quantityMustBeGreaterThanZero": "Quantity {0} must be greater than zero.",
+    "updateQuantitySuccess": "The quantity of product {0} has been updated to {1} in the cart.",
+    "updateQuantityFailed": "Unable to update cart {0}: failed to update quantity for product {1}."
+  },
+
+  "uploadImage": {
+    "noImageProvided": "No image was provided for upload.",
+    "emptyImage": "The uploaded image is empty. Please choose a valid file.",
+    "imageTooLarge": "The image exceeds the maximum allowed size of {0} MB.",
+    "unsupportedFileType": "Unsupported file type. Allowed extensions are: {0}.",
+    "uploadError": "An error occurred while uploading the image: {0}"
+  },
+
+  "general": {
+    "endpointNotFound": "The requested endpoint {0} was not found."
+  }
+}

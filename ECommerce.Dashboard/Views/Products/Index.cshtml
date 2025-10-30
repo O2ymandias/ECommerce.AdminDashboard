@@ -1,0 +1,120 @@
+﻿@using System.Globalization
+@model PaginationResult<ProductResult>
+@{
+	ViewData["Title"] = "Products";
+}
+
+<div class="d-flex flex-column gap-4">
+	<h1 class="text-center">Manage Products</h1>
+
+	<form asp-controller="Products" asp-action="Index" class="w-50 mx-auto">
+
+		<div class="input-group">
+			<input type="search"
+				   name="search"
+				   class="form-control"
+				   placeholder="Search Products"
+				   aria-label="Search Products"
+				   aria-describedby="searchBtn">
+
+			<button class="btn btn-outline-secondary" type="submit" id="searchBtn">
+				<i class="fa-solid fa-magnifying-glass"></i>
+			</button>
+		</div>
+	</form>
+
+	@if (Model.Results.Count > 0)
+	{
+		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+			@foreach (var product in Model.Results)
+			{
+				<div class="col">
+					<div class="card h-100">
+						<a asp-controller="Products"
+						   asp-action="Details"
+						   asp-route-id="@product.Id">
+
+							<img style="height: 200px;"
+								 class="card-img-top object-fit-cover"
+								 src="@product.PictureUrl"
+								 alt="@product.Name">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title line-clamp-1">
+								@product.Name
+							</h5>
+							<p class="card-text line-clamp-2">
+								@product.Description
+							</p>
+							<h6 class="card-subtitle text-muted">
+								@product.Price.ToString("C", new CultureInfo("en-US"))
+							</h6>
+						</div>
+						<div class="card-footer d-flex justify-content-between">
+							<a asp-controller="Products"
+							   asp-action="Update"
+							   asp-route-id="@product.Id"
+							   class="btn btn-outline-primary">
+								Update
+								<i class="fa-solid fa-pen-to-square"></i>
+							</a>
+							<button class="btn btn-outline-danger">
+								Delete
+								<i class="fa-solid fa-trash"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			}
+		</div>
+	}
+
+	else
+	{
+		<div class="alert alert-info text-center" role="alert">
+			There is no products to display
+		</div>
+	}
+
+	<div class="d-flex justify-content-center">
+		<nav aria-label="Page navigation">
+			<ul class="pagination">
+
+				<!-- Previous button -->
+				<li class="page-item @(Model.PageNumber == 1 ? "disabled" : "")">
+					<a asp-controller="Products"
+					   asp-action="Index"
+					   asp-route-pageNumber="@(Model.PageNumber - 1)"
+					   class="page-link">
+						<i class="fa-solid fa-angles-left"></i>
+					</a>
+				</li>
+
+				<!-- Page numbers -->
+				@for (var i = 1; i <= Model.Pages; i++)
+				{
+					<li class="page-item @(i == Model.PageNumber ? "active" : "")">
+						<a asp-controller="Products"
+						   asp-action="Index"
+						   asp-route-pageNumber="@i"
+						   class="page-link">
+							@i
+						</a>
+					</li>
+				}
+
+				<!-- Next button -->
+				<li class="page-item @(Model.PageNumber == Model.Pages ? "disabled" : "")">
+					<a asp-controller="Products"
+					   asp-action="Index"
+					   asp-route-pageNumber="@(Model.PageNumber + 1)"
+					   class="page-link">
+						<i class="fa-solid fa-angles-right"></i>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+
+</div>
+

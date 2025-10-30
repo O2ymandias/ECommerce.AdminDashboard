@@ -1,0 +1,218 @@
+[
+	{
+		"LanguageCode": "EN",
+		"Name": "Double Caramel Frappuccino",
+		"Description": "A rich blended beverage with layers of caramel, ice, milk, and coffee for a sweet and creamy indulgence.",
+		"ProductId": 1
+	},
+	{
+		"LanguageCode": "AR",
+		"Name": "فرابوتشينو كراميل مزدوج",
+		"Description": "مشروب مثلج غني بطبقات من الكراميل والحليب والقهوة لمذاق كريمي لذيذ.",
+		"ProductId": 1
+	},
+	{
+		"LanguageCode": "EN",
+		"Name": "White Chocolate Mocha Frappuccino",
+		"Description": "A smooth blend of white chocolate sauce, coffee, and milk topped with whipped cream.",
+		"ProductId": 2
+	},
+	{
+		"LanguageCode": "AR",
+		"Name": "فرابوتشينو موكا بالشوكولاتة البيضاء",
+		"Description": "مزيج ناعم من صوص الشوكولاتة البيضاء والقهوة والحليب مع كريمة مخفوقة.",
+		"ProductId": 2
+	},
+	{
+		"LanguageCode": "EN",
+		"Name": "Iced Cafe Latte",
+		"Description": "Chilled espresso mixed with cold milk for a refreshing coffee experience.",
+		"ProductId": 3
+	},
+	{
+		"LanguageCode": "AR",
+		"Name": "آيس كافيه لاتيه",
+		"Description": "إسبريسو مثلج ممزوج بالحليب البارد لتجربة قهوة منعشة.",
+		"ProductId": 3
+	},
+	{
+		"LanguageCode": "EN",
+		"Name": "White Chocolate Mocha",
+		"Description": "A decadent drink made with espresso and creamy white chocolate sauce, topped with steamed milk and whipped cream.",
+		"ProductId": 4
+	},
+	{
+		"LanguageCode": "AR",
+		"Name": "موكا بالشوكولاتة البيضاء",
+		"Description": "مشروب غني مصنوع من الإسبريسو وصوص الشوكولاتة البيضاء وكريمة مخفوقة.",
+		"ProductId": 4
+	},
+	{
+		"LanguageCode": "EN",
+		"Name": "Iced Caramel Macchiato",
+		"Description": "Espresso poured over chilled milk and vanilla syrup, finished with a caramel drizzle.",
+		"ProductId": 5
+	},
+	{
+		"LanguageCode": "AR",
+		"Name": "آيس كراميل ماكياتو",
+		"Description": "إسبريسو يُسكب فوق الحليب البارد مع فانيليا ويُزين بصلصة الكراميل.",
+		"ProductId": 5
+	},
+	{
+		"LanguageCode": "EN",
+		"Name": "Hot Caramel Macchiato",
+		"Description": "A warm espresso-based drink with steamed milk, vanilla, and caramel topping.",
+		"ProductId": 6
+	},
+	{
+		"LanguageCode": "AR",
+		"Name": "كراميل ماكياتو ساخن",
+		"Description": "مشروب دافئ من الإسبريسو مع حليب مبخر وفانيليا وطبقة من الكراميل.",
+		"ProductId": 6
+	},
+	{
+		"LanguageCode": "EN",
+		"Name": "Iced Matcha Latte",
+		"Description": "A refreshing blend of matcha green tea and milk over ice.",
+		"ProductId": 7
+	},
+	{
+		"LanguageCode": "AR",
+		"Name": "آيس ماتشا لاتيه",
+		"Description": "مزيج منعش من شاي الماتشا الأخضر والحليب مع مكعبات الثلج.",
+		"ProductId": 7
+	},
+	{
+		"LanguageCode": "EN",
+		"Name": "Honey Cake",
+		"Description": "A moist and spongy cake infused with natural honey for a sweet treat.",
+		"ProductId": 8
+	},
+	{
+		"LanguageCode": "AR",
+		"Name": "كيكة العسل",
+		"Description": "كيكة لذيذة وطرية محلاة بالعسل الطبيعي.",
+		"ProductId": 8
+	},
+	{
+		"LanguageCode": "EN",
+		"Name": "Blueberry Cheesecake",
+		"Description": "Creamy cheesecake topped with sweet and tangy blueberry compote.",
+		"ProductId": 9
+	},
+	{
+		"LanguageCode": "AR",
+		"Name": "تشيز كيك بالتوت الأزرق",
+		"Description": "تشيز كيك كريمي مزين بطبقة من صوص التوت الأزرق الحلو والحامض.",
+		"ProductId": 9
+	},
+	{
+		"LanguageCode": "EN",
+		"Name": "Glazed Donuts",
+		"Description": "Soft and fluffy donuts coated in a sweet sugary glaze.",
+		"ProductId": 10
+	},
+	{
+		"LanguageCode": "AR",
+		"Name": "دونات مزججة",
+		"Description": "دونات طرية مغطاة بطبقة من السكر اللامع.",
+		"ProductId": 10
+	},
+	{
+		"LanguageCode": "EN",
+		"Name": "Greek Salad",
+		"Description": "A fresh mix of cucumbers, tomatoes, feta cheese, and olives with olive oil dressing.",
+		"ProductId": 11
+	},
+	{
+		"LanguageCode": "AR",
+		"Name": "سلطة يونانية",
+		"Description": "خليط طازج من الخيار والطماطم وجبنة الفيتا والزيتون مع صوص زيت الزيتون.",
+		"ProductId": 11
+	},
+	{
+		"LanguageCode": "EN",
+		"Name": "Iced Black Tea Lemonade",
+		"Description": "A cooling blend of black tea and lemonade, perfect for hot days.",
+		"ProductId": 12
+	},
+	{
+		"LanguageCode": "AR",
+		"Name": "شاي أسود مثلج مع ليمون",
+		"Description": "مزيج منعش من الشاي الأسود وعصير الليمون مثالي لأيام الصيف.",
+		"ProductId": 12
+	},
+	{
+		"LanguageCode": "EN",
+		"Name": "Iced London Fog Tea Latte",
+		"Description": "Earl Grey tea with vanilla syrup and milk served over ice.",
+		"ProductId": 13
+	},
+	{
+		"LanguageCode": "AR",
+		"Name": "شاي لندن فوغ لاتيه مثلج",
+		"Description": "شاي إيرل جراي مع فانيليا وحليب يقدم مع الثلج.",
+		"ProductId": 13
+	},
+	{
+		"LanguageCode": "EN",
+		"Name": "Turkey Bacon, Cheddar & Egg White Sandwich",
+		"Description": "A protein-rich sandwich with turkey bacon, fluffy egg whites, and cheddar cheese.",
+		"ProductId": 14
+	},
+	{
+		"LanguageCode": "AR",
+		"Name": "ساندويتش بياض البيض والجبن مع لحم ديك رومي مدخن",
+		"Description": "ساندويتش غني بالبروتين يحتوي على لحم ديك رومي مدخن وبياض بيض وجبنة شيدر.",
+		"ProductId": 14
+	},
+	{
+		"LanguageCode": "EN",
+		"Name": "Iced Matcha",
+		"Description": "Pure matcha green tea served chilled for a healthy and energizing drink.",
+		"ProductId": 15
+	},
+	{
+		"LanguageCode": "AR",
+		"Name": "ماتشا مثلجة",
+		"Description": "شاي ماتشا أخضر نقي يقدم بارداً لمشروب صحي ومنعش.",
+		"ProductId": 15
+	},
+	{
+		"LanguageCode": "EN",
+		"Name": "Double-Smoked Bacon, Cheddar & Egg Sandwich",
+		"Description": "A savory sandwich made with smoky bacon, egg, and melted cheddar cheese.",
+		"ProductId": 16
+	},
+	{
+		"LanguageCode": "AR",
+		"Name": "ساندويتش بيكون مدخن مرتين مع بيض وجبن",
+		"Description": "ساندويتش شهي مصنوع من لحم البيكون المدخن والبيض وجبنة الشيدر الذائبة.",
+		"ProductId": 16
+	},
+	{
+		"LanguageCode": "EN",
+		"Name": "Iced Chai Tea Latte with Oleato Golden Foam",
+		"Description": "Spiced chai tea with milk, topped with luxurious Oleato golden foam.",
+		"ProductId": 17
+	},
+	{
+		"LanguageCode": "AR",
+		"Name": "شاي تشاي لاتيه مثلج مع رغوة أولياتو الذهبية",
+		"Description": "شاي تشاي المتبل مع الحليب يُقدم مع رغوة ذهبية فاخرة.",
+		"ProductId": 17
+	},
+	{
+		"LanguageCode": "EN",
+		"Name": "Dragon Drink® Starbucks Refreshers® Beverage with Oleato Golden Foam",
+		"Description": "A vibrant tropical refresher with coconut milk and dragon fruit flavors, topped with golden foam.",
+		"ProductId": 18
+	},
+	{
+		"LanguageCode": "AR",
+		"Name": "مشروب دراجون مع رغوة أولياتو الذهبية",
+		"Description": "مشروب استوائي منعش مع حليب جوز الهند ونكهة فاكهة التنين، مع رغوة ذهبية.",
+		"ProductId": 18
+	}
+]

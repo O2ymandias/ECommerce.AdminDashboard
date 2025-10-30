@@ -1,0 +1,1824 @@
+{
+	"info": {
+		"_postman_id": "95856b57-9267-477e-a9dc-4a470b261c7b",
+		"name": "FreshCart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33855033"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/products",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "Sort.Dir",
+									"value": "Desc",
+									"description": "Sort.Dir || Dir\nSupported Values\nAsc || 0\nDesc || 1\nDefaults to Asc || 0",
+									"disabled": true
+								},
+								{
+									"key": "Sort.Key",
+									"value": "Price",
+									"description": "Sort.Key || Key\nSupported Values\nName || 0\nPrice || 1\n\nDefaluts to Name || 0",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "Cake",
+									"description": "Serach by:\nName, Description, Brand, Category ",
+									"disabled": true
+								},
+								{
+									"key": "pageNumber",
+									"value": "2",
+									"description": "Defaults to 1",
+									"disabled": true
+								},
+								{
+									"key": "pageSize",
+									"value": "10",
+									"description": "Defaults to 10\nMaximum pageSize is 25",
+									"disabled": true
+								},
+								{
+									"key": "brandId",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "categoryId",
+									"value": "4",
+									"disabled": true
+								},
+								{
+									"key": "minPrice",
+									"value": "-1",
+									"description": "If minPrice <= 0, it will be skipped",
+									"disabled": true
+								},
+								{
+									"key": "maxPrice",
+									"value": "250",
+									"description": "If maxPrice <= 0, it will be skipped",
+									"disabled": true
+								},
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN\nIf not provided, fallback translation will be returned.",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/products/1",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"1"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "Ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Brands",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/products/brands",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"brands"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/products/categories?culture=ar",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product Gallery",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/products/gallery/1",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"gallery",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Max Order Quantity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/products/1/max-order-quantity",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"1",
+								"max-order-quantity"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Get Cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/cart/1",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"cart",
+								"1"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add To Cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cartId\" : \"\",\r\n    \"productId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/cart/add-to-cart",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"cart",
+								"add-to-cart"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove From Cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cartId\": \"\",\r\n    \"productId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/cart/remove-from-cart",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"cart",
+								"remove-from-cart"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Quantity",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cartId\": \"\",\r\n    \"productId\": 1,\r\n    \"newQuantity\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/cart/update-quantity",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"cart",
+								"update-quantity"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/cart/1",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"cart",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Stores the token in the collection variables.\r",
+									"var jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"authToken\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"displayName\": \"\",\r\n    \"userName\": \"\",\r\n    \"email\": \"\",\r\n    \"password\": \"\",\r\n    \"phoneNumber\": \"\",\r\n    \"address\": {\r\n        \"street\": \"\",\r\n        \"city\": \"\",\r\n        \"country\": \"\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/auth/register",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Stores the token in the collection variables.\r",
+									"var jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"authToken\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userNameOrEmail\": \"\",\r\n    \"password\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/auth/login",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Stores the token in the collection variables.\r",
+									"var jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"authToken\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/auth/refresh-token",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"refresh-token"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Revoke Token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/auth/revoke-token",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"revoke-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Get User Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/account/user-info",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"account",
+								"user-info"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/account/address",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"account",
+								"address"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forget Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{vault:authorization-secret}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/account/forget-password",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"account",
+								"forget-password"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{vault:authorization-secret}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"\",\r\n    \"token\": \"\",\r\n    \"newPassword\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/account/reset-password",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"account",
+								"reset-password"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"currentPassword\": \"\",\r\n    \"newPassword\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/account/change-password",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"account",
+								"change-password"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Basic Info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "displayName",
+									"value": "Nael",
+									"type": "text"
+								},
+								{
+									"key": "address.street",
+									"value": "123 Street",
+									"type": "text"
+								},
+								{
+									"key": "address.city",
+									"value": "Mansoura",
+									"type": "text"
+								},
+								{
+									"key": "address.country",
+									"value": "Egypt",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "01234567890",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/My Files/Fresh Cart/profile.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/account/basic-info",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"account",
+								"basic-info"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Request Email Change",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newEmail\": \"\",\r\n    \"password\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/account/request-email-change",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"account",
+								"request-email-change"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm Email Change",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"verificationCode\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/account/confirm-email-change",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"account",
+								"confirm-email-change"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Wishlist",
+			"item": [
+				{
+					"name": "Get User Wishlist Items",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/wishlist",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"wishlist"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "pageSize",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Wishlist Product Ids",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/wishlist/product-ids",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"wishlist",
+								"product-ids"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Total",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/wishlist/total",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"wishlist",
+								"total"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add To Wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/wishlist/add-to-wishlist",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"wishlist",
+								"add-to-wishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove From Wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/wishlist/remove-from-wishlist",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"wishlist",
+								"remove-from-wishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clear Wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/wishlist/clear-wishlist",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"wishlist",
+								"clear-wishlist"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rating",
+			"item": [
+				{
+					"name": "Get Ratings",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/ratings",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"ratings"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "ratingId",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "productId",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "culture",
+									"value": "ar",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Latest Ratings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/ratings/latest",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"ratings",
+								"latest"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "5",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Rating",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": 1,\r\n    \"stars\": 1,\r\n    \"title\": \"\",\r\n    \"comment\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/ratings",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"ratings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Rating",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/ratings/1",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"ratings",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cartId\": \"\",\r\n    \"deliveryMethodId\": 1,\r\n    \"shippingAddress\": {\r\n        \"recipientName\": \"\",\r\n        \"phoneNumber\": \"\",\r\n        \"street\": \"\",\r\n        \"city\": \"\",\r\n        \"country\": \"\"\r\n    },\r\n    \"paymentMethod\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/orders",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Delivery Methods",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/orders/delivery-methods",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"delivery-methods"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/orders",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "orderId",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "Sort.Dir",
+									"value": "Asc",
+									"description": "(Asc || 0)\n(Desc || 1)\nDefaults to \"Desc\"",
+									"disabled": true
+								},
+								{
+									"key": "Sort.Key",
+									"value": "Price",
+									"description": "(CreatedAt || 0)\n(Price || 1)\nDefaults to \"CreatedAt\"",
+									"disabled": true
+								},
+								{
+									"key": "pageNumber",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "pageSize",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "orderStatus",
+									"value": "",
+									"description": "(Processing || 1)\n(Shipped || 2)\n(Delivered || 3)\n(Cancelled || 4)",
+									"disabled": true
+								},
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Latest Orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/orders/latest",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"latest"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/orders/1",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"1"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Checkout",
+			"item": [
+				{
+					"name": "Checkout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/checkout/2",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"checkout",
+								"2"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Session",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/checkout/2",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"checkout",
+								"2"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Buggy",
+			"item": [
+				{
+					"name": "Not Found Resource (404)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/buggy/notfound",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"buggy",
+								"notfound"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Not Found EndPoint (404)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/buggy/noendpoint",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"buggy",
+								"noendpoint"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Internal Server Error (500)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/buggy/servererror",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"buggy",
+								"servererror"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bad Request (400)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/buggy/badrequest",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"buggy",
+								"badrequest"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validation Error (Bad Request 400)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/buggy/badrequest/one",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"buggy",
+								"badrequest",
+								"one"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unautorized (401)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/buggy/unauthorized",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"buggy",
+								"unauthorized"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test Redis Connection",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/buggy/redis",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"buggy",
+								"redis"
+							],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BaseUrl",
+			"value": "http://localhost:5115",
+			"type": "string"
+		},
+		{
+			"key": "authToken",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

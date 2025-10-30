@@ -1,0 +1,82 @@
+﻿[
+  {
+    "languageCode": "en",
+    "name": "Frappuccino",
+    "categoryId": 1
+  },
+  {
+    "languageCode": "ar",
+    "name": "فرابتشينو",
+    "categoryId": 1
+  },
+  {
+    "languageCode": "en",
+    "name": "Latte",
+    "categoryId": 2
+  },
+  {
+    "languageCode": "ar",
+    "name": "لاتيه",
+    "categoryId": 2
+  },
+  {
+    "languageCode": "en",
+    "name": "Mocha",
+    "categoryId": 3
+  },
+  {
+    "languageCode": "ar",
+    "name": "موكا",
+    "categoryId": 3
+  },
+  {
+    "languageCode": "en",
+    "name": "Macchiato",
+    "categoryId": 4
+  },
+  {
+    "languageCode": "ar",
+    "name": "ماكياتو",
+    "categoryId": 4
+  },
+  {
+    "languageCode": "en",
+    "name": "Matcha",
+    "categoryId": 5
+  },
+  {
+    "languageCode": "ar",
+    "name": "ماتشا",
+    "categoryId": 5
+  },
+  {
+    "languageCode": "en",
+    "name": "Cake",
+    "categoryId": 6
+  },
+  {
+    "languageCode": "ar",
+    "name": "كيك",
+    "categoryId": 6
+  },
+  {
+    "languageCode": "en",
+    "name": "Donuts",
+    "categoryId": 7
+  },
+  {
+    "languageCode": "ar",
+    "name": "دونات",
+    "categoryId": 7
+  },
+  {
+    "languageCode": "en",
+    "name": "Salad",
+    "categoryId": 8
+  },
+  {
+    "languageCode": "ar",
+    "name": "سلطة",
+    "categoryId": 8
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "Name": "Starbucks",
+    "PictureUrl": "images/brands/Starbucks.png"
+  },
+  {
+    "Name": "Costa",
+    "PictureUrl": "images/brands/Costa.png"
+  },
+  {
+    "Name": "Cilantro",
+    "PictureUrl": "images/brands/Cilantro.png"
+  },
+  {
+    "Name": "TBS",
+    "PictureUrl": "images/brands/TBS.png"
+  },
+  {
+    "Name": "OnTheRun",
+    "PictureUrl": "images/brands/OnTheRun.png"
+  },
+  {
+    "Name": "Caribou",
+    "PictureUrl": "images/brands/Caribou.png"
+  },
+  {
+    "Name": "KrispyKreme",
+    "PictureUrl": "images/brands/KrispyKreme.png"
+  }
+]

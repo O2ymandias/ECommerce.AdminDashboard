@@ -1,0 +1,107 @@
+﻿@model UpdateProductViewModel
+@inject IUnitOfWork unitOfWork
+@{
+	var brands = await unitOfWork
+			.Repository<Brand>()
+			.GetAllAsync(null);
+
+	var categories = await unitOfWork
+			.Repository<Category>()
+			.GetAllAsync(null);
+
+	var brandsItems = new SelectList(brands, nameof(Brand.Id), nameof(Brand.Name));
+	var categoriesItems = new SelectList(categories, nameof(Category.Id), nameof(Category.Name));
+
+	ViewData["Title"] = "Update";
+}
+
+<h1 class="text-center">Update "@Model.Name"</h1>
+
+<form asp-controller="Products"
+	  asp-action="Update"
+	  method="post"
+	  enctype="multipart/form-data"
+	  class="my-5 d-flex flex-column gap-4 w-75 mx-auto shadow-sm p-5">
+
+	<div class="form-group">
+		<div class="image-uploader shadow-sm border">
+			<img id="previewImage"
+				 src="@Model.PictureUrl"
+				 alt="@Model.Name">
+
+			<div class="overlay">
+				<label for="uploadImageInp" class="btn btn-light">
+					<i class="fa-solid fa-camera"></i>
+				</label>
+			</div>
+		</div>
+
+		<span class="d-block mt-2 text-muted small">
+			Allowed Extensions: <strong>(jpg | jpeg | png)</strong> <br>
+			Max Size: <strong>5MB</strong>
+		</span>
+
+		<input asp-for="Picture" id="uploadImageInp" class="d-none" type="file" accept=".jpg,.jpeg,.png">
+		<input asp-for="PictureUrl" class="d-none" />
+		<span asp-validation-for="Picture" class="text-danger"></span>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="Name" class="form-label"></label>
+		<input asp-for="Name" class="form-control" />
+		<span asp-validation-for="Name" class="text-danger"></span>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="Description" class="form-label"></label>
+		<textarea asp-for="Description" class="form-control" style="max-height:200px" rows="3"></textarea>
+		<span asp-validation-for="Description" class="text-danger"></span>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="CategoryId" class="form-label"></label>
+		<select asp-items="categoriesItems" asp-for="CategoryId" class="form-select">
+		</select>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="BrandId" class="form-label"></label>
+		<select asp-items="brandsItems" asp-for="BrandId" class="form-select">
+		</select>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="Price" class="form-label"></label>
+		<input asp-for="Price" class="form-control" />
+		<span asp-validation-for="Price" class="text-danger"></span>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="UnitsInStock" class="form-label"></label>
+		<input asp-for="UnitsInStock" class="form-control" />
+		<span asp-validation-for="UnitsInStock" class="text-danger"></span>
+	</div>
+
+	<div class="d-flex align-items-center justify-content-between">
+		<button type="submit" class="btn btn-outline-success">
+			Save
+			<i class="fa-solid fa-pen-to-square"></i>
+		</button>
+
+		<a asp-controller="Products"
+		   asp-action="Index"
+		   class="btn btn-outline-secondary">
+			Back to List
+			<i class="fa-solid fa-arrow-right"></i>
+		</a>
+	</div>
+</form>
+
+
+@section Styles {
+	<link href="~/css/products.css" rel="stylesheet" />
+}
+
+@section Scripts {
+	<script src="~/js/products.js"></script>
+}

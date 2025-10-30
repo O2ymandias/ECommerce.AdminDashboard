@@ -1,0 +1,72 @@
+﻿[
+  {
+    "languageCode": "en",
+    "name": "Starbucks",
+    "brandId": 1
+  },
+  {
+    "languageCode": "ar",
+    "name": "ستاربكس",
+    "brandId": 1
+  },
+  {
+    "languageCode": "en",
+    "name": "Costa",
+    "brandId": 2
+  },
+  {
+    "languageCode": "ar",
+    "name": "كوستا",
+    "brandId": 2
+  },
+  {
+    "languageCode": "en",
+    "name": "Cilantro",
+    "brandId": 3
+  },
+  {
+    "languageCode": "ar",
+    "name": "سيلانترو",
+    "brandId": 3
+  },
+  {
+    "languageCode": "en",
+    "name": "TBS",
+    "brandId": 4
+  },
+  {
+    "languageCode": "ar",
+    "name": "تي بي إس",
+    "brandId": 4
+  },
+  {
+    "languageCode": "en",
+    "name": "On The Run",
+    "brandId": 5
+  },
+  {
+    "languageCode": "ar",
+    "name": "أون ذا رن",
+    "brandId": 5
+  },
+  {
+    "languageCode": "en",
+    "name": "Caribou",
+    "brandId": 6
+  },
+  {
+    "languageCode": "ar",
+    "name": "كاريبو",
+    "brandId": 6
+  },
+  {
+    "languageCode": "en",
+    "name": "Krispy Kreme",
+    "brandId": 7
+  },
+  {
+    "languageCode": "ar",
+    "name": "كريسبي كريم",
+    "brandId": 7
+  }
+]

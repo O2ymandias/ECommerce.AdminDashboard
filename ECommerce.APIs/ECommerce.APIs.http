@@ -1,0 +1,21 @@
+@BaseUrl = https://localhost:7004
+
+### Get all products
+GET {{BaseUrl}}/api/products
+Accept: application/json
+###
+
+### Get product by id
+GET {{BaseUrl}}/api/products/13
+Accept: application/json
+###
+
+### Get all brands
+GET {{BaseUrl}}/api/products/brands
+Accept: application/json
+###
+
+### Get all categories
+GET {{BaseUrl}}/api/products/categories
+Accept: application/json
+###

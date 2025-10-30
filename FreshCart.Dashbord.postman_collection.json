@@ -1,0 +1,1054 @@
+{
+	"info": {
+		"_postman_id": "e0592266-3b73-4175-91b8-f0ade61fc7c7",
+		"name": "FreshCart.Dashbord",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33855033"
+	},
+	"item": [
+		{
+			"name": "Enums",
+			"item": [
+				{
+					"name": "Order Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BaseUrl}}/api/enums/order-status"
+					},
+					"response": []
+				},
+				{
+					"name": "Payment Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BaseUrl}}/api/enums/payment-status"
+					},
+					"response": []
+				},
+				{
+					"name": "Payment Method",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BaseUrl}}/api/enums/payment-method"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Get Translations Keys",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BaseUrl}}/api/translations/keys"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product Translations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BaseUrl}}/api/translations/products/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Double Caramel Frappuccino XXX",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "A rich blended beverage with layers of caramel, ice, milk, and coffee for a sweet and creamy indulgence.",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "unitsInStock",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "brandId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "categoryId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": "{{BaseUrl}}/api/products"
+					},
+					"response": []
+				},
+				{
+					"name": "Remove From Product Gallery",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/products/gallery?productId=1&imagePath=images/products/gallery/Double-Caramel-Frappuccino-1.jpg",
+							"host": ["{{BaseUrl}}"],
+							"path": ["api", "products", "gallery"],
+							"query": [
+								{
+									"key": "productId",
+									"value": "1"
+								},
+								{
+									"key": "imagePath",
+									"value": "images/products/gallery/Double-Caramel-Frappuccino-1.jpg"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add To Product Gallery",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "productId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": "{{BaseUrl}}/api/products/gallery"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Or Update Product Translations",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": 1,\r\n    \"name\": \"اسم المنتج\",\r\n    \"description\": \"تفاصيل المنتج\",\r\n    \"languageCode\": \"AR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BaseUrl}}/api/translations/products"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Test Name",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Test Description",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "unitsInStock",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "categoryId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "brandId",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{BaseUrl}}/api/products"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Brand",
+			"item": [
+				{
+					"name": "Get Brands",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/brands",
+							"host": ["{{BaseUrl}}"],
+							"path": ["api", "brands"],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Brand",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "{{BaseUrl}}/api/brands/5"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Brand Translations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "{{BaseUrl}}/api/translations/brands/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Brand",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Starbucks",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/My Files/Private/Images/Nael.jpg"
+								},
+								{
+									"key": "translations[0].languageCode",
+									"value": "EN",
+									"type": "text"
+								},
+								{
+									"key": "translations[0].name",
+									"value": "Starbucks",
+									"type": "text"
+								},
+								{
+									"key": "translations[1].languageCode",
+									"value": "AR",
+									"type": "text"
+								},
+								{
+									"key": "translations[1].name",
+									"value": "ستاربكس",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{BaseUrl}}/api/products/brands"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Brand",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "16",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Starbucks",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/My Files/Private/Images/img3.png",
+									"disabled": true
+								},
+								{
+									"key": "translations[0].languageCode",
+									"value": "EN",
+									"type": "text"
+								},
+								{
+									"key": "translations[0].name",
+									"value": "Starbucks..",
+									"type": "text"
+								},
+								{
+									"key": "translations[1].languageCode",
+									"value": "AR",
+									"type": "text"
+								},
+								{
+									"key": "translations[1].name",
+									"value": "ستاربكس",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{BaseUrl}}/api/products/brands"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Brand",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{BaseUrl}}/api/products/brands/16"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Get Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "{{BaseUrl}}/api/categories"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/categories/1",
+							"host": ["{{BaseUrl}}"],
+							"path": ["api", "categories", "1"],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"description": "AR || EN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category Translations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "{{BaseUrl}}/api/translations/categories/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Clothes",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/pc/Downloads/Clothes.png"
+								},
+								{
+									"key": "translations[0].languageCode",
+									"value": "EN",
+									"type": "text"
+								},
+								{
+									"key": "translations[0].name",
+									"value": "Clothes",
+									"type": "text"
+								},
+								{
+									"key": "translations[1].languageCode",
+									"value": "AR",
+									"type": "text"
+								},
+								{
+									"key": "translations[1].name",
+									"value": "ملابس",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{BaseUrl}}/api/categories"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "9",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Clothing",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/pc/Downloads/Clothes.jpg"
+								},
+								{
+									"key": "translations[0].languageCode",
+									"value": "EN",
+									"type": "text"
+								},
+								{
+									"key": "translations[0].name",
+									"value": "Clothing",
+									"type": "text"
+								},
+								{
+									"key": "translations[1].languageCode",
+									"value": "AR",
+									"type": "text"
+								},
+								{
+									"key": "translations[1].name",
+									"value": "ستاربكس",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{BaseUrl}}/api/categories"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Brand",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "{{BaseUrl}}/api/categories/9"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/users?pageNumber=1&pageSize=10&RoleId=f38534e6-91c3-47f2-be26-872dcb7b944a",
+							"host": ["{{BaseUrl}}"],
+							"path": ["api", "users"],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "search",
+									"value": "Max",
+									"disabled": true
+								},
+								{
+									"key": "RoleId",
+									"value": "f38534e6-91c3-47f2-be26-872dcb7b944a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BaseUrl}}/api/users/366c9110-9810-47e7-a997-e3055cf9df78"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users Count",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{BaseUrl}}/api/users/count"
+					},
+					"response": []
+				},
+				{
+					"name": "Assign User To Roles",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"366c9110-9810-47e7-a997-e3055cf9df78\",\r\n    \"roles\" : [ \"User\", \"Admin\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BaseUrl}}/api/users/assign-roles"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pageNumber\": 1,\r\n    \"pageSize\": 10,\r\n    \"userId\": \"366c9110-9810-47e7-a997-e3055cf9df78\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BaseUrl}}/api/orders"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "Get Roles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{BaseUrl}}/api/roles"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Get Orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/orders?pageNumber=1&pageSize=10&search=doaa@gmail.com",
+							"host": ["{{BaseUrl}}"],
+							"path": ["api", "orders"],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "orderId",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "sort.Dir",
+									"value": "desc",
+									"disabled": true
+								},
+								{
+									"key": "sort.Key",
+									"value": "subtotal",
+									"disabled": true
+								},
+								{
+									"key": "orderStatus",
+									"value": "Pending",
+									"disabled": true
+								},
+								{
+									"key": "paymentStatus",
+									"value": "PaymentReceived",
+									"disabled": true
+								},
+								{
+									"key": "paymentMethod",
+									"value": "cash",
+									"disabled": true
+								},
+								{
+									"key": "minSubtotal",
+									"value": "200",
+									"disabled": true
+								},
+								{
+									"key": "maxSubtotal",
+									"value": "600",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "doaa@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{BaseUrl}}/api/orders/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": 2,\r\n    \"newOrderStatus\":\"Shipped\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BaseUrl}}/api/orders/order-status"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Payment Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": 2,\r\n    \"newPaymentStatus\":\"PaymentReceived\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BaseUrl}}/api/orders/payment-status"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Orders Count",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/orders/count?orderStatus=Pending",
+							"host": ["{{BaseUrl}}"],
+							"path": ["api", "orders", "count"],
+							"query": [
+								{
+									"key": "orderStatus",
+									"value": "Pending"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order Status Counts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/orders/order-status-count",
+							"host": ["{{BaseUrl}}"],
+							"path": ["api", "orders", "order-status-count"],
+							"query": [
+								{
+									"key": "culture",
+									"value": "ar",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Payment Status Counts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{BaseUrl}}/api/orders/payment-status-count"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sales",
+			"item": [
+				{
+					"name": "Get Total Sales",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/sales/total?startDate=2025-09-30T21:00:00.000Z&endDate=2025-10-19T00:14:50.052Z",
+							"host": ["{{BaseUrl}}"],
+							"path": ["api", "sales", "total"],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2025-09-30T21:00:00.000Z"
+								},
+								{
+									"key": "endDate",
+									"value": "2025-10-19T00:14:50.052Z"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sales",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/sales?pageNumber=1&pageSize=5",
+							"host": ["{{BaseUrl}}"],
+							"path": ["api", "sales"],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "5"
+								},
+								{
+									"key": "sort.dir",
+									"value": "Asc",
+									"disabled": true
+								},
+								{
+									"key": "sort.key",
+									"value": "UnitsSold",
+									"disabled": true
+								},
+								{
+									"key": "startDate",
+									"value": "10-5-2025",
+									"disabled": true
+								},
+								{
+									"key": "endDate",
+									"value": "10-22-2025",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login As Admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Stores the token in the collection variables.\r",
+							"var jsonData;\r",
+							"if (pm.response.code === 200) {\r",
+							"    jsonData = pm.response.json();\r",
+							"    pm.collectionVariables.set(\"authToken\", jsonData.token);\r",
+							"} "
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userNameOrEmail\": \"\",\r\n    \"password\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/auth/login",
+					"host": ["{{BaseUrl}}"],
+					"path": ["api", "auth", "login"],
+					"query": [
+						{
+							"key": "culture",
+							"value": "ar",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [""]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [""]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BaseUrl",
+			"value": "http://localhost:5115"
+		},
+		{
+			"key": "authToken",
+			"value": ""
+		}
+	]
+}

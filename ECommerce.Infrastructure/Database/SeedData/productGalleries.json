@@ -1,0 +1,22 @@
+[
+  {
+    "PictureUrl": "images/products/gallery/Double-Caramel-Frappuccino-1.jpg",
+    "AltText": "Double Caramel Frappuccino",
+    "ProductId": 1
+  },
+  {
+    "PictureUrl": "images/products/gallery/Double-Caramel-Frappuccino-2.jpg",
+    "AltText": "Double Caramel Frappuccino",
+    "ProductId": 1
+  },
+  {
+    "PictureUrl": "images/products/gallery/Double-Caramel-Frappuccino-3.jpg",
+    "AltText": "Double Caramel Frappuccino",
+    "ProductId": 1
+  },
+  {
+    "PictureUrl": "images/products/gallery/Double-Caramel-Frappuccino-4.jpg",
+    "AltText": "Double Caramel Frappuccino",
+    "ProductId": 1
+  }
+]

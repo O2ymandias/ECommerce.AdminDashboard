@@ -1,0 +1,74 @@
+﻿@model ProductResult
+@{
+	ViewData["Title"] = "Details";
+}
+
+<div class="d-flex flex-column gap-4">
+
+	<h1 class="text-center">The details of "@Model.Name"</h1>
+
+	@if (TempData.ContainsKey("SuccessMessage"))
+	{
+		<div class="alert alert-success alert-dismissible fade show w-75 mx-auto" role="alert">
+			<strong>Updated: </strong> <span>@TempData["SuccessMessage"]</span>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	}
+
+	<div class="my-5 d-flex flex-column gap-4 w-75 mx-auto shadow-sm p-5">
+
+		<img src="@Model.PictureUrl"
+			 alt="@Model.Name"
+			 style="width:200px; height:200px;"
+			 class="object-fit-cover rounded-2" />
+
+
+		<div class="form-group">
+			<label asp-for="@Model.Name" class="form-label"></label>
+			<input asp-for="@Model.Name" class="form-control" disabled />
+		</div>
+
+		<div class="form-group">
+			<label asp-for="@Model.Description" class="form-label"></label>
+			<textarea asp-for="@Model.Description" class="form-control" style="max-height:200px" rows="3" disabled></textarea>
+		</div>
+
+		<div class="form-group">
+			<label asp-for="@Model.Category" class="form-label"></label>
+			<input asp-for="@Model.Category" class="form-control" disabled />
+		</div>
+
+
+		<div class="form-group">
+			<label asp-for="@Model.Brand" class="form-label"></label>
+			<input asp-for="@Model.Brand" class="form-control" disabled />
+		</div>
+
+		<div class="form-group">
+			<label asp-for="@Model.Price" class="form-label"></label>
+			<input asp-for="@Model.Price" class="form-control" disabled />
+		</div>
+
+		<div class="form-group">
+			<label asp-for="@Model.UnitsInStock" class="form-label"></label>
+			<input asp-for="@Model.UnitsInStock" class="form-control" disabled />
+		</div>
+
+		<div class="d-flex align-items-center justify-content-between">
+			<a asp-controller="Products"
+			   asp-action="Update"
+			   asp-route-id="@Model.Id"
+			   class="btn btn-outline-primary">
+				Update
+				<i class="fa-solid fa-pen-to-square"></i>
+			</a>
+
+			<a asp-controller="Products"
+			   asp-action="Index"
+			   class="btn btn-outline-secondary">
+				Back to List
+				<i class="fa-solid fa-arrow-right"></i>
+			</a>
+		</div>
+	</div>
+</div>

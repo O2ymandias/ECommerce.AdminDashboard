@@ -1,0 +1,7 @@
+﻿namespace ECommerce.Core.Dtos.AuthDtos;
+public class AddressResult
+{
+	public string Street { get; set; }
+	public string City { get; set; }
+	public string Country { get; set; }
+}
