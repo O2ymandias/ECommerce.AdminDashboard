@@ -57,7 +57,7 @@ The backend implements industry-standard patterns:
 
 ```bash
 git clone https://github.com/O2ymandias/FreshCart.AdminDashboard.git
-cd FreshCart.Backend
+cd FreshCart.AdminDashboard
 ```
 
 ### 2. Configure Application Settings
